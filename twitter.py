@@ -1,14 +1,13 @@
 from socialMedia import socialMedia 
-twitts=[]
 
 class Twitter(socialMedia):
     def __init__(self) :
-        super(socialMedia,self).__init__()
+        super().__init__("twitter")
+        self.twitts=[]
 
-    def createNewTwitt(body):
-        twit = str(input("Write what you want to twitt: "))
-        if(len(twit)< 280):
-            twitts.append(twit)
+    def createNewTwitt(self, body):
+        if(len(body)< 280):
+            self.twitts.append(body)
             print("Twit posted succssfully")
 
         else:
@@ -16,4 +15,4 @@ class Twitter(socialMedia):
 
 
     def getTwitt(self):
-        return twitts
+        return self.twitts
